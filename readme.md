@@ -8,3 +8,7 @@
 - Waybar
 - SWWW
 - Wofi
+
+## Fonts 
+
+0xProto Nerd Font

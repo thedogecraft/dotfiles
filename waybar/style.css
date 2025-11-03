@@ -1,8 +1,14 @@
 * {
-    font-family: "JetBrains Mono", "Font Awesome 6 Free", Roboto, Helvetica, Arial, sans-serif;
+    font-family: "0xProto Nerd Font", "Font Awesome 6 Free", Roboto, Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-weight: 500;
 }
+
+/* * {
+    font-family: "JetBrains Mono", "Font Awesome 6 Free", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+} */
 
 window#waybar {
     background-color: rgba(30, 30, 46, 0.85);
@@ -85,6 +91,7 @@ button:hover {
 #power-profiles-daemon,
 #mpd,
 #language,
+#custom-power,
 #keyboard-state {
     padding: 4px 12px;
     margin: 4px 2px;
@@ -332,3 +339,14 @@ button:hover {
 #language:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+/* #custom-power {
+    padding: 4px 12px;
+    margin: 4px 2px;
+    background-color: rgba(49, 50, 68, 0.6);
+    color: #cdd6f4;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+} */
+ #custom-power {
+    margin-right: 5px;
+ }
