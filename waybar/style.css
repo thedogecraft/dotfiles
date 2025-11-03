@@ -1,0 +1,334 @@
+* {
+    font-family: "JetBrains Mono", "Font Awesome 6 Free", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+window#waybar {
+    background-color: rgba(30, 30, 46, 0.85);
+    border-radius: 0;
+    border-bottom: 2px solid rgba(137, 180, 250, 0.3);
+    color: #cdd6f4;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+window#waybar.hidden {
+    opacity: 0;
+}
+
+button {
+    box-shadow: none;
+    border: none;
+    border-radius: 8px;
+    margin: 4px 2px;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: rgba(137, 180, 250, 0.15);
+    box-shadow: none;
+}
+
+#workspaces button {
+    padding: 4px 10px;
+    background-color: transparent;
+    color: #bac2de;
+    border-radius: 8px;
+    margin: 4px 3px;
+}
+
+#workspaces button:hover {
+    background: rgba(137, 180, 250, 0.15);
+    color: #cdd6f4;
+}
+
+#workspaces button.active {
+    background: linear-gradient(135deg, rgba(137, 180, 250, 0.25), rgba(116, 199, 236, 0.25));
+    color: #89b4fa;
+    box-shadow: 0 0 10px rgba(137, 180, 250, 0.2);
+}
+
+#workspaces button.urgent {
+    background-color: rgba(243, 139, 168, 0.3);
+    color: #f38ba8;
+    animation: urgent-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes urgent-pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+#mode {
+    background: linear-gradient(90deg, rgba(137, 180, 250, 0.2), rgba(116, 199, 236, 0.2));
+    color: #89b4fa;
+    padding: 4px 12px;
+    border-radius: 8px;
+    margin: 4px;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd,
+#language,
+#keyboard-state {
+    padding: 4px 12px;
+    margin: 4px 2px;
+    background-color: rgba(49, 50, 68, 0.6);
+    color: #cdd6f4;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+#window,
+#workspaces {
+    margin: 0 6px;
+}
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 6px;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 6px;
+}
+
+#clock {
+    background: linear-gradient(135deg, rgba(137, 180, 250, 0.15), rgba(116, 199, 236, 0.15));
+    color: #89b4fa;
+    font-weight: 600;
+}
+
+#clock:hover {
+    background: linear-gradient(135deg, rgba(137, 180, 250, 0.25), rgba(116, 199, 236, 0.25));
+}
+
+#battery {
+    background: linear-gradient(135deg, rgba(166, 227, 161, 0.15), rgba(148, 226, 213, 0.15));
+    color: #a6e3a1;
+}
+
+#battery.charging, #battery.plugged {
+    background: linear-gradient(135deg, rgba(166, 227, 161, 0.25), rgba(148, 226, 213, 0.25));
+    color: #a6e3a1;
+}
+
+#battery.critical:not(.charging) {
+    background: linear-gradient(135deg, rgba(243, 139, 168, 0.3), rgba(235, 160, 172, 0.3));
+    color: #f38ba8;
+    animation: battery-blink 1s ease-in-out infinite;
+}
+
+@keyframes battery-blink {
+    from { opacity: 1; }
+    to { opacity: 0.5; }
+}
+
+#cpu {
+    background: linear-gradient(135deg, rgba(166, 227, 161, 0.15), rgba(148, 226, 213, 0.15));
+    color: #a6e3a1;
+}
+
+#memory {
+    background: linear-gradient(135deg, rgba(203, 166, 247, 0.15), rgba(180, 190, 254, 0.15));
+    color: #cba6f7;
+}
+
+#disk {
+    background: linear-gradient(135deg, rgba(250, 179, 135, 0.15), rgba(235, 160, 172, 0.15));
+    color: #fab387;
+}
+
+#backlight {
+    background: linear-gradient(135deg, rgba(249, 226, 175, 0.15), rgba(250, 179, 135, 0.15));
+    color: #f9e2af;
+}
+
+#network {
+    background: linear-gradient(135deg, rgba(137, 180, 250, 0.15), rgba(116, 199, 236, 0.15));
+    color: #89b4fa;
+}
+
+#network.disconnected {
+    background: linear-gradient(135deg, rgba(243, 139, 168, 0.25), rgba(235, 160, 172, 0.25));
+    color: #f38ba8;
+}
+
+#pulseaudio {
+    background: linear-gradient(135deg, rgba(249, 226, 175, 0.15), rgba(250, 179, 135, 0.15));
+    color: #f9e2af;
+}
+
+#pulseaudio:hover {
+    background: linear-gradient(135deg, rgba(249, 226, 175, 0.25), rgba(250, 179, 135, 0.25));
+}
+
+#pulseaudio.muted {
+    background: rgba(88, 91, 112, 0.3);
+    color: #6c7086;
+}
+
+#wireplumber {
+    background: linear-gradient(135deg, rgba(245, 194, 231, 0.15), rgba(203, 166, 247, 0.15));
+    color: #f5c2e7;
+}
+
+#wireplumber.muted {
+    background: rgba(88, 91, 112, 0.3);
+    color: #6c7086;
+}
+
+#temperature {
+    background: linear-gradient(135deg, rgba(250, 179, 135, 0.15), rgba(235, 160, 172, 0.15));
+    color: #fab387;
+}
+
+#temperature.critical {
+    background: linear-gradient(135deg, rgba(243, 139, 168, 0.3), rgba(235, 160, 172, 0.3));
+    color: #f38ba8;
+    animation: temp-pulse 1s ease-in-out infinite;
+}
+
+@keyframes temp-pulse {
+    from { opacity: 1; }
+    to { opacity: 0.6; }
+}
+
+#tray {
+    background-color: rgba(49, 50, 68, 0.6);
+    padding: 4px 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: rgba(243, 139, 168, 0.3);
+}
+
+#idle_inhibitor {
+    background: rgba(88, 91, 112, 0.4);
+    color: #6c7086;
+}
+
+#idle_inhibitor.activated {
+    background: linear-gradient(135deg, rgba(249, 226, 175, 0.2), rgba(250, 179, 135, 0.2));
+    color: #f9e2af;
+}
+
+#power-profiles-daemon.performance {
+    background: linear-gradient(135deg, rgba(243, 139, 168, 0.25), rgba(235, 160, 172, 0.25));
+    color: #f38ba8;
+}
+
+#power-profiles-daemon.balanced {
+    background: linear-gradient(135deg, rgba(137, 180, 250, 0.15), rgba(116, 199, 236, 0.15));
+    color: #89b4fa;
+}
+
+#power-profiles-daemon.power-saver {
+    background: linear-gradient(135deg, rgba(166, 227, 161, 0.15), rgba(148, 226, 213, 0.15));
+    color: #a6e3a1;
+}
+
+#custom-media {
+    background: linear-gradient(135deg, rgba(148, 226, 213, 0.15), rgba(166, 227, 161, 0.15));
+    color: #94e2d5;
+    min-width: 100px;
+}
+
+#mpd {
+    background: linear-gradient(135deg, rgba(148, 226, 213, 0.15), rgba(166, 227, 161, 0.15));
+    color: #94e2d5;
+}
+
+#mpd.disconnected {
+    background: rgba(88, 91, 112, 0.3);
+    color: #6c7086;
+}
+
+#mpd.stopped {
+    background: rgba(88, 91, 112, 0.4);
+    color: #9399b2;
+}
+
+#mpd.paused {
+    background: linear-gradient(135deg, rgba(148, 226, 213, 0.1), rgba(166, 227, 161, 0.1));
+    color: #94e2d5;
+    opacity: 0.7;
+}
+
+#language {
+    background: linear-gradient(135deg, rgba(116, 199, 236, 0.15), rgba(137, 180, 250, 0.15));
+    color: #74c7ec;
+}
+
+#keyboard-state {
+    background: linear-gradient(135deg, rgba(166, 227, 161, 0.15), rgba(148, 226, 213, 0.15));
+    color: #a6e3a1;
+}
+
+#keyboard-state > label.locked {
+    background: rgba(137, 180, 250, 0.2);
+}
+
+#scratchpad {
+    background: rgba(49, 50, 68, 0.5);
+    color: #89b4fa;
+}
+
+#scratchpad.empty {
+    background-color: transparent;
+}
+
+#privacy-item {
+    padding: 4px 10px;
+    border-radius: 8px;
+    margin: 4px 2px;
+}
+
+#privacy-item.screenshare {
+    background: linear-gradient(135deg, rgba(250, 179, 135, 0.25), rgba(235, 160, 172, 0.25));
+    color: #fab387;
+}
+
+#privacy-item.audio-in {
+    background: linear-gradient(135deg, rgba(166, 227, 161, 0.25), rgba(148, 226, 213, 0.25));
+    color: #a6e3a1;
+}
+
+#privacy-item.audio-out {
+    background: linear-gradient(135deg, rgba(137, 180, 250, 0.25), rgba(116, 199, 236, 0.25));
+    color: #89b4fa;
+}
+
+/* Smooth hover effects for all modules */
+#clock:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#disk:hover,
+#temperature:hover,
+#backlight:hover,
+#network:hover,
+#custom-media:hover,
+#mpd:hover,
+#language:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
