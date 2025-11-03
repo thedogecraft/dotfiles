@@ -111,7 +111,8 @@
         // }
     },
     "clock": {
-        // "timezone": "America/New_York",
+        "format": "{:%I:%M %p}",
+        "timezone": "America/Phoenix",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },

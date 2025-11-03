@@ -6,4 +6,5 @@
 - Hyprland
 - Kitty
 - Waybar
+- SWWW
 - Wofi
