@@ -8,6 +8,7 @@
 - Waybar
 - SWWW
 - Wofi
+- Matugen
 
 ## Fonts 
 

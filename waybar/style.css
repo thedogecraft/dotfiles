@@ -1,20 +1,15 @@
+@import "colors.css";
 * {
     font-family: "0xProto Nerd Font", "Font Awesome 6 Free", Roboto, Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-weight: 500;
 }
 
-/* * {
-    font-family: "JetBrains Mono", "Font Awesome 6 Free", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-} */
-
 window#waybar {
-    background-color: rgba(30, 30, 46, 0.85);
+    background-color: @surface;
     border-radius: 0;
-    border-bottom: 2px solid rgba(137, 180, 250, 0.3);
-    color: #cdd6f4;
+    border-bottom: 2px solid @primary;
+    color: @on_surface;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -31,32 +26,32 @@ button {
 }
 
 button:hover {
-    background: rgba(137, 180, 250, 0.15);
+    background: @surface_container_high;
     box-shadow: none;
 }
 
 #workspaces button {
     padding: 4px 10px;
     background-color: transparent;
-    color: #bac2de;
+    color: @on_surface_variant;
     border-radius: 8px;
     margin: 4px 3px;
 }
 
 #workspaces button:hover {
-    background: rgba(137, 180, 250, 0.15);
-    color: #cdd6f4;
+    background: @surface_container_high;
+    color: @on_surface;
 }
 
 #workspaces button.active {
-    background: linear-gradient(135deg, rgba(137, 180, 250, 0.25), rgba(116, 199, 236, 0.25));
-    color: #89b4fa;
-    box-shadow: 0 0 10px rgba(137, 180, 250, 0.2);
+    background: @primary_container;
+    color: @on_primary_container;
+    box-shadow: 0 0 10px @primary;
 }
 
 #workspaces button.urgent {
-    background-color: rgba(243, 139, 168, 0.3);
-    color: #f38ba8;
+    background-color: @error_container;
+    color: @on_error_container;
     animation: urgent-pulse 1.5s ease-in-out infinite;
 }
 
@@ -67,8 +62,8 @@ button:hover {
 }
 
 #mode {
-    background: linear-gradient(90deg, rgba(137, 180, 250, 0.2), rgba(116, 199, 236, 0.2));
-    color: #89b4fa;
+    background: @primary_container;
+    color: @on_primary_container;
     padding: 4px 12px;
     border-radius: 8px;
     margin: 4px;
@@ -95,8 +90,8 @@ button:hover {
 #keyboard-state {
     padding: 4px 12px;
     margin: 4px 2px;
-    background-color: rgba(49, 50, 68, 0.6);
-    color: #cdd6f4;
+    background-color: @surface_container;
+    color: @on_surface;
     border-radius: 8px;
     transition: all 0.2s ease;
 }
@@ -115,28 +110,29 @@ button:hover {
 }
 
 #clock {
-    background: linear-gradient(135deg, rgba(137, 180, 250, 0.15), rgba(116, 199, 236, 0.15));
-    color: #89b4fa;
+    background: @primary_container;
+    color: @on_primary_container;
     font-weight: 600;
 }
 
 #clock:hover {
-    background: linear-gradient(135deg, rgba(137, 180, 250, 0.25), rgba(116, 199, 236, 0.25));
+    background: @primary;
+    color: @on_primary;
 }
 
 #battery {
-    background: linear-gradient(135deg, rgba(166, 227, 161, 0.15), rgba(148, 226, 213, 0.15));
-    color: #a6e3a1;
+    background: @tertiary_container;
+    color: @on_tertiary_container;
 }
 
 #battery.charging, #battery.plugged {
-    background: linear-gradient(135deg, rgba(166, 227, 161, 0.25), rgba(148, 226, 213, 0.25));
-    color: #a6e3a1;
+    background: @tertiary;
+    color: @on_tertiary;
 }
 
 #battery.critical:not(.charging) {
-    background: linear-gradient(135deg, rgba(243, 139, 168, 0.3), rgba(235, 160, 172, 0.3));
-    color: #f38ba8;
+    background: @error_container;
+    color: @on_error_container;
     animation: battery-blink 1s ease-in-out infinite;
 }
 
@@ -146,67 +142,68 @@ button:hover {
 }
 
 #cpu {
-    background: linear-gradient(135deg, rgba(166, 227, 161, 0.15), rgba(148, 226, 213, 0.15));
-    color: #a6e3a1;
+    background: @tertiary_container;
+    color: @on_tertiary_container;
 }
 
 #memory {
-    background: linear-gradient(135deg, rgba(203, 166, 247, 0.15), rgba(180, 190, 254, 0.15));
-    color: #cba6f7;
+    background: @secondary_container;
+    color: @on_secondary_container;
 }
 
 #disk {
-    background: linear-gradient(135deg, rgba(250, 179, 135, 0.15), rgba(235, 160, 172, 0.15));
-    color: #fab387;
+    background: @error_container;
+    color: @on_error_container;
 }
 
 #backlight {
-    background: linear-gradient(135deg, rgba(249, 226, 175, 0.15), rgba(250, 179, 135, 0.15));
-    color: #f9e2af;
+    background: @tertiary_container;
+    color: @on_tertiary_container;
 }
 
 #network {
-    background: linear-gradient(135deg, rgba(137, 180, 250, 0.15), rgba(116, 199, 236, 0.15));
-    color: #89b4fa;
+    background: @primary_container;
+    color: @on_primary_container;
 }
 
 #network.disconnected {
-    background: linear-gradient(135deg, rgba(243, 139, 168, 0.25), rgba(235, 160, 172, 0.25));
-    color: #f38ba8;
+    background: @error_container;
+    color: @on_error_container;
 }
 
 #pulseaudio {
-    background: linear-gradient(135deg, rgba(249, 226, 175, 0.15), rgba(250, 179, 135, 0.15));
-    color: #f9e2af;
+    background: @secondary_container;
+    color: @on_secondary_container;
 }
 
 #pulseaudio:hover {
-    background: linear-gradient(135deg, rgba(249, 226, 175, 0.25), rgba(250, 179, 135, 0.25));
+    background: @secondary;
+    color: @on_secondary;
 }
 
 #pulseaudio.muted {
-    background: rgba(88, 91, 112, 0.3);
-    color: #6c7086;
+    background: @surface_variant;
+    color: @on_surface_variant;
 }
 
 #wireplumber {
-    background: linear-gradient(135deg, rgba(245, 194, 231, 0.15), rgba(203, 166, 247, 0.15));
-    color: #f5c2e7;
+    background: @secondary_container;
+    color: @on_secondary_container;
 }
 
 #wireplumber.muted {
-    background: rgba(88, 91, 112, 0.3);
-    color: #6c7086;
+    background: @surface_variant;
+    color: @on_surface_variant;
 }
 
 #temperature {
-    background: linear-gradient(135deg, rgba(250, 179, 135, 0.15), rgba(235, 160, 172, 0.15));
-    color: #fab387;
+    background: @tertiary_container;
+    color: @on_tertiary_container;
 }
 
 #temperature.critical {
-    background: linear-gradient(135deg, rgba(243, 139, 168, 0.3), rgba(235, 160, 172, 0.3));
-    color: #f38ba8;
+    background: @error_container;
+    color: @on_error_container;
     animation: temp-pulse 1s ease-in-out infinite;
 }
 
@@ -216,7 +213,7 @@ button:hover {
 }
 
 #tray {
-    background-color: rgba(49, 50, 68, 0.6);
+    background-color: @surface_container;
     padding: 4px 8px;
 }
 
@@ -226,78 +223,78 @@ button:hover {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: rgba(243, 139, 168, 0.3);
+    background-color: @error_container;
 }
 
 #idle_inhibitor {
-    background: rgba(88, 91, 112, 0.4);
-    color: #6c7086;
+    background: @surface_variant;
+    color: @on_surface_variant;
 }
 
 #idle_inhibitor.activated {
-    background: linear-gradient(135deg, rgba(249, 226, 175, 0.2), rgba(250, 179, 135, 0.2));
-    color: #f9e2af;
+    background: @tertiary_container;
+    color: @on_tertiary_container;
 }
 
 #power-profiles-daemon.performance {
-    background: linear-gradient(135deg, rgba(243, 139, 168, 0.25), rgba(235, 160, 172, 0.25));
-    color: #f38ba8;
+    background: @error_container;
+    color: @on_error_container;
 }
 
 #power-profiles-daemon.balanced {
-    background: linear-gradient(135deg, rgba(137, 180, 250, 0.15), rgba(116, 199, 236, 0.15));
-    color: #89b4fa;
+    background: @primary_container;
+    color: @on_primary_container;
 }
 
 #power-profiles-daemon.power-saver {
-    background: linear-gradient(135deg, rgba(166, 227, 161, 0.15), rgba(148, 226, 213, 0.15));
-    color: #a6e3a1;
+    background: @tertiary_container;
+    color: @on_tertiary_container;
 }
 
 #custom-media {
-    background: linear-gradient(135deg, rgba(148, 226, 213, 0.15), rgba(166, 227, 161, 0.15));
-    color: #94e2d5;
+    background: @tertiary_container;
+    color: @on_tertiary_container;
     min-width: 100px;
 }
 
 #mpd {
-    background: linear-gradient(135deg, rgba(148, 226, 213, 0.15), rgba(166, 227, 161, 0.15));
-    color: #94e2d5;
+    background: @tertiary_container;
+    color: @on_tertiary_container;
 }
 
 #mpd.disconnected {
-    background: rgba(88, 91, 112, 0.3);
-    color: #6c7086;
+    background: @surface_variant;
+    color: @on_surface_variant;
 }
 
 #mpd.stopped {
-    background: rgba(88, 91, 112, 0.4);
-    color: #9399b2;
+    background: @surface_dim;
+    color: @on_surface_variant;
 }
 
 #mpd.paused {
-    background: linear-gradient(135deg, rgba(148, 226, 213, 0.1), rgba(166, 227, 161, 0.1));
-    color: #94e2d5;
+    background: @surface_container_low;
+    color: @on_tertiary_container;
     opacity: 0.7;
 }
 
 #language {
-    background: linear-gradient(135deg, rgba(116, 199, 236, 0.15), rgba(137, 180, 250, 0.15));
-    color: #74c7ec;
+    background: @primary_container;
+    color: @on_primary_container;
 }
 
 #keyboard-state {
-    background: linear-gradient(135deg, rgba(166, 227, 161, 0.15), rgba(148, 226, 213, 0.15));
-    color: #a6e3a1;
+    background: @tertiary_container;
+    color: @on_tertiary_container;
 }
 
 #keyboard-state > label.locked {
-    background: rgba(137, 180, 250, 0.2);
+    background: @primary_container;
 }
 
 #scratchpad {
-    background: rgba(49, 50, 68, 0.5);
-    color: #89b4fa;
+    background: @surface_container;
+    color: @primary;
 }
 
 #scratchpad.empty {
@@ -311,18 +308,18 @@ button:hover {
 }
 
 #privacy-item.screenshare {
-    background: linear-gradient(135deg, rgba(250, 179, 135, 0.25), rgba(235, 160, 172, 0.25));
-    color: #fab387;
+    background: @error_container;
+    color: @on_error_container;
 }
 
 #privacy-item.audio-in {
-    background: linear-gradient(135deg, rgba(166, 227, 161, 0.25), rgba(148, 226, 213, 0.25));
-    color: #a6e3a1;
+    background: @tertiary_container;
+    color: @on_tertiary_container;
 }
 
 #privacy-item.audio-out {
-    background: linear-gradient(135deg, rgba(137, 180, 250, 0.25), rgba(116, 199, 236, 0.25));
-    color: #89b4fa;
+    background: @primary_container;
+    color: @on_primary_container;
 }
 
 /* Smooth hover effects for all modules */
@@ -337,16 +334,9 @@ button:hover {
 #custom-media:hover,
 #mpd:hover,
 #language:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px @shadow;
 }
-/* #custom-power {
-    padding: 4px 12px;
-    margin: 4px 2px;
-    background-color: rgba(49, 50, 68, 0.6);
-    color: #cdd6f4;
-    border-radius: 8px;
-    transition: all 0.2s ease;
-} */
- #custom-power {
+
+#custom-power {
     margin-right: 5px;
- }
+}
