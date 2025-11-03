@@ -1,0 +1,175 @@
+@import "colors.rasi"
+
+* {
+     font: "0xProto Nerd Font 12";
+    background-color: transparent;
+    text-color: @on-surface;
+}
+
+window {
+    background-color: @surface;
+    border: 2px solid;
+    border-color: @primary;
+    border-radius: 12px;
+    padding: 12px;
+    width: 600px;
+}
+
+mainbox {
+    background-color: transparent;
+    spacing: 12px;
+    padding: 8px;
+}
+
+inputbar {
+    background-color: @surface-container-high;
+    text-color: @on-surface;
+    border-radius: 8px;
+    padding: 12px 16px;
+    spacing: 8px;
+    children: [ prompt, textbox-prompt-colon, entry ];
+}
+
+prompt {
+    background-color: @primary-container;
+    text-color: @on-primary-container;
+    padding: 4px 12px;
+    border-radius: 8px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: "";
+    text-color: @on-surface-variant;
+}
+
+entry {
+    placeholder: "Search...";
+    placeholder-color: @on-surface-variant;
+    text-color: @on-surface;
+}
+
+listview {
+    background-color: transparent;
+    columns: 1;
+    lines: 8;
+    spacing: 4px;
+    cycle: true;
+    dynamic: true;
+    scrollbar: true;
+    fixed-height: true;
+    border: 0px;
+    padding: 8px 4px;
+}
+
+scrollbar {
+    width: 4px;
+    border: 0px;
+    handle-color: @primary;
+    handle-width: 4px;
+    padding: 0px;
+    margin: 0px 0px 0px 8px;
+    border-radius: 8px;
+    background-color: @surface-container;
+}
+
+element {
+    background-color: @surface-container;
+    text-color: @on-surface;
+    border-radius: 8px;
+    padding: 8px 12px;
+    spacing: 8px;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: @on-surface;
+}
+
+element normal.urgent {
+    background-color: @error-container;
+    text-color: @on-error-container;
+}
+
+element normal.active {
+    background-color: @tertiary-container;
+    text-color: @on-tertiary-container;
+}
+
+element selected.normal {
+    background-color: @primary-container;
+    text-color: @on-primary-container;
+}
+
+element selected.urgent {
+    background-color: @error;
+    text-color: @on-error;
+}
+
+element selected.active {
+    background-color: @tertiary;
+    text-color: @on-tertiary;
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color: @on-surface;
+}
+
+element alternate.urgent {
+    background-color: @error-container;
+    text-color: @on-error-container;
+}
+
+element alternate.active {
+    background-color: @tertiary-container;
+    text-color: @on-tertiary-container;
+}
+
+element-icon {
+    size: 1.2em;
+    margin: 0px 8px 0px 0px;
+}
+
+element-text {
+    text-color: inherit;
+}
+
+message {
+    background-color: @surface-container;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 8px 0px;
+}
+
+textbox {
+    background-color: transparent;
+    text-color: @on-surface;
+    padding: 4px;
+}
+
+mode-switcher {
+    background-color: @surface-container;
+    border-radius: 8px;
+    padding: 8px;
+    spacing: 8px;
+}
+
+button {
+    background-color: transparent;
+    text-color: @on-surface-variant;
+    border-radius: 8px;
+    padding: 8px 16px;
+}
+
+button selected {
+    background-color: @primary-container;
+    text-color: @on-primary-container;
+}
+
+error-message {
+    background-color: @error-container;
+    text-color: @on-error-container;
+    border-radius: 8px;
+    padding: 12px;
+}

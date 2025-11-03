@@ -7,8 +7,9 @@
 - Kitty
 - Waybar
 - SWWW
-- Wofi
+- Rofi
 - Matugen
+- Dunst
 
 ## Fonts 
 
