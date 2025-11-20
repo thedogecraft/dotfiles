@@ -1,0 +1,9 @@
+{
+  "vscord.app.name": "VSCodium",
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "vscode-icons",
+  "editor.fontFamily": "'Hack Nerd Font Mono', monospace",
+  "terminal.integrated.fontFamily": "'Hack Nerd Font Mono', monospace",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
